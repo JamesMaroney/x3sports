@@ -1,0 +1,4 @@
+AddHandler php-stable .php
+# BEGIN WordPress
+
+# END WordPress
