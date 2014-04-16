@@ -397,7 +397,7 @@ $(function(){
         $('article .day-list, .user-info > h2,  .user-info > p').slideUp(250, function(){
             $('#days-list').empty()
         });
-        $('.days-nav').addClass('collapsed');
+        $('.days-nav').addClass('hidden');
         return;
       }
 
@@ -412,7 +412,7 @@ $(function(){
 
         // show the schedule options
         $('article .day-list, .user-info > h2').slideDown(250);
-        $('.days-nav').removeClass('collapsed');
+        $('.days-nav').removeClass('hidden');
 
         showWeek('thisweek');
 
@@ -432,7 +432,7 @@ $(function(){
     }
 
     // Hookup listeners to buttons for switching displayed days
-    var daysNav = $('.days-nav a').hide().on('click', function(){
+    var daysNav = $('.days-nav a').on('click', function(){
       showWeek($(this).data().week);
       if($(this).hasClass('bottom')) $(window).scrollTop($('#days-list').offset().top);
       return false;

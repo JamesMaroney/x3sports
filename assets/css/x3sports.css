@@ -1840,16 +1840,7 @@ article .half-col {
 }
 
 .schedule.signup ul.days-nav {
-	margin: 50px 0;
-}
-
-.schedule.signup ul.days-nav.collapsed {
-	margin: 0;
-	height: 35px;
-}
-
-.schedule.signup ul.days-nav.collapsed li {
-	display: none;
+	margin: 25px 0;
 }
 
 .schedule ul.days-nav li {
