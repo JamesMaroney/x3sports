@@ -19,8 +19,20 @@ $firstname = $title_array[0]; ?>
 
 
 			<div class="story"><a name="<?php echo( basename(get_permalink($post->ID)) ); ?>"></a>
+				<div class="image">
+					<img src="<?php echo get_image('photo',1,1,0,$page->ID) ?>" alt="<?php echo get_the_title($post->ID); ?> now">
+<?php if (get('before_photo', 1, 1, false, $page->ID) != '') { ?>					
+					<div class="before">
+						<img src="<?php echo get_image('before_photo',1,1,0,$page->ID) ?>" alt="<?php echo get_the_title($post->ID); ?> before">
+					</div><!--before-->
+<?php } ?>
+				</div><!--image-->				
 				<div class="copy">
-					<h2><?php the_title(); ?></h2>
+					<?php if (get('before_photo', 1, 1, false, $page->ID) != '') { ?>				
+						<h2 class="has-before"><?php the_title(); ?></h2>
+					<?php } else { ?>
+						<h2><?php the_title(); ?></h2>					
+					<?php } ?>
 					<dl class="stats">
 
 <?php $details = get_group('Details', $post->ID); 
@@ -49,15 +61,7 @@ if ($classes) { ?>
 							<?php the_content(); ?>
 						</dd>
 					</dl>
-				</div><!--copy-->
-				<div class="image">
-					<img src="<?php echo get_image('photo',1,1,0,$page->ID) ?>" alt="<?php echo get_the_title($post->ID); ?> now">
-<?php if (get('before_photo', 1, 1, false, $page->ID) != '') { ?>					
-					<div class="before">
-						<img src="<?php echo get_image('before_photo',1,1,0,$page->ID) ?>" alt="<?php echo get_the_title($post->ID); ?> before">
-					</div><!--before-->
-<?php } ?>
-				</div><!--image-->				
+				</div><!--copy-->			
 			</div><!--story-->
 	
 	
