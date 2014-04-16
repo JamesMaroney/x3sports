@@ -7,7 +7,7 @@ get_header(); ?>
 		<section role="main" class="locations" data-pinurl="<?php echo get('pin_image'); ?>" data-latlng="<?php echo get('latitude_and_longitude'); ?>" data-gmap="<?php echo get('google_map_url'); ?>">
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>	
 
-			<a href="<?php echo get_page_link(48); ?>" id="free-class" title="Book my free class now!">Book my free class now!</a>
+			<a href="<?php echo get_page_link(48); ?>" id="free-class" title="Book my free class now >">Book my free class now ></a>
 			<h1>Locations <span><?php the_title(); ?></span></h1>
 
 

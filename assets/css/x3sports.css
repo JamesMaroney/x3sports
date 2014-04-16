@@ -144,8 +144,8 @@ a#free-class {
 	text-decoration: none;
 	letter-spacing: .03em;
 	text-align: center;
-	width: 315px;
-	margin-left: 170px;
+	width: 325px;
+	margin-left: 160px;
 	box-shadow: -4px 4px 3px #292928;
 }
 
@@ -161,7 +161,7 @@ a#free-class:after {
 	height: 0;
 	border-style: solid;
 	border-width: 10px 0 10px 9px;
-	border-color: transparent transparent transparent #ac2d2d;
+	border-color: transparent transparent transparent #ffde00;
 }
 
 a#free-class:hover {
@@ -170,12 +170,12 @@ a#free-class:hover {
 }
 
 a#free-class:hover:after {
-	border-color: transparent transparent transparent #ffde00;
+	border-color: transparent transparent transparent #ac2d2d;
 }
 
 .lt-ie9 a#free-class {
-	width: 335px;
-	margin-left: 150px;
+	width: 345px;
+	margin-left: 140px;
 }
 
 
@@ -3589,12 +3589,12 @@ article .half-col + .half-col + * {
 
 a#free-class {
 	font-size: 1.2em;
-	width: 230px;
+	width: 240px;
 	padding: 7px;
 }
 
 .lt-ie9 a#free-class {
-	width: 230px;
+	width: 240px;
 	font-size: 1.1em;
 }
 
@@ -3605,7 +3605,7 @@ a#free-class {
 }
 
 .interior a#free-class {
-	margin-left: 96px;
+	margin-left: 86px;
 }
 
 a#free-class span {

@@ -2,7 +2,7 @@
 
 
 		<section role="main" class="blog">
-			<a href="<?php echo get_page_link(48); ?>" id="free-class" title="Book my free class now!">Book my free class now!</a>
+			<a href="<?php echo get_page_link(48); ?>" id="free-class" title="Book my free class now >">Book my free class now ></a>
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<div class="two-column">
 				<article>

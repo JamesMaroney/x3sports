@@ -5,7 +5,7 @@ Template Name: Schedules
 get_header(); ?>
 
 		<section role="main" class="schedule">
-			<a href="<?php echo get_page_link(48); ?>" id="free-class" title="Book my free class now!">Book my free class now!</a>
+			<a href="<?php echo get_page_link(48); ?>" id="free-class" title="Book my free class now >">Book my free class now ></a>
 			<h1>Schedules</h1>
 			<div class="two-column">
 				<aside>
