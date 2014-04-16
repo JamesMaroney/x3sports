@@ -3013,10 +3013,14 @@ section > article h1, .locations .content article h1 {
 }
 
 .signup .user-info mark {
-	position: static;
-	text-indent: 0;
-	margin-bottom: 20px;
-	max-width: 100%;
+	display: none;
+}
+
+.signup form > mark {
+	display: block;
+	margin: 20px 10px 0 10px;
+	font-style: italic;
+	color: #D6D6D6;
 }
 
 .signup .user-info li input[type="text"], .signup .user-info li textarea {
@@ -3497,7 +3501,7 @@ article .half-col + .half-col + * {
 	width: 338px !important;
 }
 
-.locations > h1 {
+.signup form > mark, .locations > h1 {
 	display: none;
 }
 

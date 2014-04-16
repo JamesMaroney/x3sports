@@ -95,6 +95,7 @@ get_header(); ?>
 						</ul>
 						<h4><input type="submit" value="Sign Up For My Free Class"></h4>
 						<p>Some information appears to be missing. Please update the needed fields and try again.</p>
+						<mark>* Phone and email are for scheduling purposes. Your privacy is important to us.</mark>
 					</form>
 				</article>
 			</div><!--two-column-->
