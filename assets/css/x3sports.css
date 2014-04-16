@@ -2768,18 +2768,11 @@ footer .col:nth-child(1) .section:last-child {
 .success .story .image > img {
 	width: 100%;
 	height: auto;
-/*
-	height: 260px;
-	width: auto;
-	position: relative;
-	left: 50%;
-	margin-left: -341px;
-*/
 }
 
 .success .story .image .before {
 	bottom: -60px;
-	right: 15px;
+	right: 15px;	
 }
 
 .success .story .image .before img {
@@ -3215,6 +3208,10 @@ html.popup article {
 
 #header nav > ul > li {
 	float: left;
+}
+
+#header nav > ul > li:first-child {
+	display: none;
 }
 
 #header ul.second li:last-child, #header ul.main > li:nth-child(5) {
