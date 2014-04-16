@@ -1657,9 +1657,12 @@ article .half-col {
 	margin: 0;
 }
 
-.signup .user-info, .signup #confirmation {
+.signup article form {
 	background-color: #3e3e3d;
 	padding: 20px;
+}
+
+.signup .user-info, .signup #confirmation {
 	overflow: hidden;
 	position: relative;
 }
@@ -2954,10 +2957,6 @@ section > article h1, .locations .content article h1 {
 	margin: 0;
 }
 
-.schedule .day-list {
-	margin-right: 10px;
-	margin-left: 10px;
-}
 
 .schedule .day-list h3 {
 	font-size: 1.2em;
@@ -3016,7 +3015,7 @@ section > article h1, .locations .content article h1 {
 .signup .user-info mark {
 	position: static;
 	text-indent: 0;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	max-width: 100%;
 }
 
@@ -3416,7 +3415,7 @@ html.popup article {
 .interior h1 {
 	max-width: 970px;
 	margin: 0 auto 40px auto;
-	font-size: 6.5em;
+	font-size: 5.5em;
 	padding-top: 60px;
 }
 
