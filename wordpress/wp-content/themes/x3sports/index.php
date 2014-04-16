@@ -246,22 +246,50 @@ endforeach; wp_reset_postdata(); ?>
 				<img src="/assets/images/home-callout1-text.png" class="large" alt="">
 				<img src="/assets/images/home-callout1-text-small.png" class="small" alt="">
 			</div><!--callout1-->
-			<div id="blog-posts">
-<ul>
-<?php $posts = get_posts(array('category' => 1, 'posts_per_page' => 3)); 
-  foreach ( $posts as $post ) {	setup_postdata( $post );  ?>
+
+<?php if (get('blog_posts_post_1_id') != '') { ?>			
+						<div id="blog-posts">
+				<ul>
+
+	<?php $temppost = get_post(get('blog_posts_post_1_id')); ?>
 
 <li>
-<h4><a href="<?php the_permalink(); ?>" title="<?php echo $post->post_title; ?>"><?php echo $post->post_title; ?></a></h4>
-<?php the_excerpt(); ?>
-<a href="<?php the_permalink(); ?>" title="Read more">Read more</a>
+<h4><a href="<?php echo get_permalink(get('blog_posts_post_1_id')); ?>" title="<?php echo $temppost->post_title; ?>"><?php echo $temppost->post_title; ?></a></h4>
+<p><?php echo get_the_post_excerpt(get('blog_posts_post_1_id')); ?></p>
+<a href="<?php echo get_permalink(get('blog_posts_post_1_id')); ?>" title="Read more">Read more</a>
 </li> 
 
-<?php } 
-wp_reset_postdata(); ?>
+
+
+<?php if (get('blog_posts_post_2_id') != '') { 
+
+$temppost = get_post(get('blog_posts_post_2_id')); ?>
+
+<li>
+<h4><a href="<?php echo get_permalink(get('blog_posts_post_2_id')); ?>" title="<?php echo $temppost->post_title; ?>"><?php echo $temppost->post_title; ?></a></h4>
+<p><?php echo get_the_post_excerpt(get('blog_posts_post_2_id')); ?></p>
+<a href="<?php echo get_permalink(get('blog_posts_post_2_id')); ?>" title="Read more">Read more</a>
+</li> 
+
+<?php }
+
+if (get('blog_posts_post_3_id') != '') { 
+
+$temppost = get_post(get('blog_posts_post_3_id')); ?>
+
+<li>
+<h4><a href="<?php echo get_permalink(get('blog_posts_post_3_id')); ?>" title="<?php echo $temppost->post_title; ?>"><?php echo $temppost->post_title; ?></a></h4>
+<p><?php echo get_the_post_excerpt(get('blog_posts_post_3_id')); ?></p>
+<a href="<?php echo get_permalink(get('blog_posts_post_3_id')); ?>" title="Read more">Read more</a>
+</li> 
+
+<?php } ?>
 
 				</ul>
 			</div><!--blog-posts-->
+<?php } ?>
+
+
 			<div id="callout2">
 				<div class="content">
 					<div>
