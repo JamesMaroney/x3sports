@@ -98,7 +98,7 @@ window._fbq.push(["track", "PixelInitialized", {}]);
 				<a href="<?php echo home_url(); ?>" title="X3 Sports &mdash; Home"><img src="/assets/images/logo.png" alt="X3 Sports"></a>
 				<nav>
 					<ul class="main">
-						<a href="<?php echo get_page_link(48); ?>" title="Book My Free Class Now">Book My Free Class Now</a>
+						<li><a href="<?php echo get_page_link(48); ?>" title="Book My Free Class Now">Book My Free Class Now</a></li>
 						<li><span <?php if ($root_page_id == 10) { echo 'class="on"'; } ?>>Classes <ins>&#9660;</ins></span>
 							<ul>
 <?php $pages = get_pages(array('child_of' => 10, 'parent' => 10, 'sort_column' => 'menu_order'));
