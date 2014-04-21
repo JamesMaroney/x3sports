@@ -165,8 +165,8 @@ a#free-class:after {
 }
 
 a#free-class:hover {
-	color: #fff;	
-	background-color: #ac2d2e;	
+	color: #fff;
+	background-color: #ac2d2e;
 }
 
 a#free-class:hover:after {
@@ -1777,9 +1777,33 @@ article .half-col {
 }
 
 .signup .user-info h2 {
-	font-size: 1.4em;
+	font-size: 1.18em;
 	font-weight: 400;
+	font-style: italic;
 	display: none;
+	overflow: hidden;
+	position: relative;
+	padding: 0 40px 10px 40px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.signup .user-info h2:before, .signup .user-info h2:after {
+	position: absolute;
+	bottom: 0;
+	width: 28px;
+	height: 28px;
+	content: '';
+}
+
+.signup .user-info h2:before {
+	background-image: url(../images/bg-signup-arrow-left.png);
+	left: 0;
+}
+
+.signup .user-info h2:after {
+	background-image: url(../images/bg-signup-arrow-right.png);
+	right: 0;
 }
 
 .signup .user-info > p {
@@ -1788,14 +1812,29 @@ article .half-col {
 	display: none;
 }
 
-.signup ol li {
+.schedule.signup .day-list h3 {
+	border-width: 7px 7px 7px 12px;
+	line-height: 26px;
+	background-size: 26px 26px;
+}
+
+.schedule.signup .day-list ol {
+	background-color: #2a2a29;
+	overflow: hidden;
+	border-top: 1px solid #3e3e3d;
+}
+
+.schedule.signup .day-list ol li {
 	padding: 8px 20px;
 	position: relative;
 	overflow: hidden;
+	margin-top: 0;
 }
 
-.signup .day-list {
+.schedule.signup .day-list {
 	display: none;
+	margin-top: 0;
+	margin-bottom: 3px;
 }
 
 .signup ol li input {
@@ -2781,7 +2820,7 @@ footer .col:nth-child(1) .section:last-child {
 
 .success .story .image .before {
 	bottom: -60px;
-	right: 15px;	
+	right: 15px;
 }
 
 .success .story .image .before img {
@@ -3529,6 +3568,26 @@ article .half-col + .half-col + * {
 	color: #777;
 }
 
+.schedule.signup .day-list ol li {
+	float: left;
+	display: block;
+	width: 33.3%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.schedule.signup .day-list ol li label:hover {
+	color: #D6D6D6;
+}
+
+.schedule.signup .day-list ol li label {
+	font-size: .9em;
+}
+
+
 } /* > 670px */
 
 @media only screen and (min-width: 42em) and (max-width: 64.5em) {
@@ -4177,7 +4236,15 @@ footer ul.social li:last-child a {
 	background-size: 79px auto;
 }
 
+.signup .user-info h2:before {
+	background-image: url(../images/bg-signup-arrow-left-2x.png);
+	background-size: 28px 28px;
+}
 
+.signup .user-info h2:after {
+	background-image: url(../images/bg-signup-arrow-right-2x.png);
+	background-size: 28px 28px;
+}
 
 
 

@@ -65,7 +65,7 @@ get_header(); ?>
 								</li>
 							</ul>
 							<mark>* Phone and email are for scheduling purposes. Your privacy is important to us.</mark>							
-							<h2>Which class would you like to reserve for your free class? </h2>
+							<h2>Great! Which class would you like to reserve for your free class?</h2>
 							<p>Please select a date and time below.</p>
 						</div><!--user-info-->
 						<div id="days-list"></div>
