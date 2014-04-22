@@ -55,6 +55,17 @@ get_header(); ?>
 					          <option value="0">How did you hear about us?*</option>
 					        </select>
 					      </li>
+								<li>
+									<textarea name="sign-up-goals" id="signup-goals" placeholder="Goals (add if under 18)"></textarea>
+								</li>
+								<li class="radio">
+									<input name="schedule-method" type="radio" value="Contact me to schedule" id="schedule-method-contact" checked="checked">
+									<label for="schedule-method-contact">Contact me to schedule</label>
+								</li>
+								<li class="radio">
+									<input name="schedule-method" type="radio" value="Reserve spot myself" id="schedule-method-self">
+									<label for="schedule-method-self">Reserve spot myself</label>
+								</li>
 					    </ul>
 							<div>
 								<input type="submit" value="Book My Free Class">

@@ -331,9 +331,9 @@ $(function(){
   // Signup Callout
   if ($('.callout.signup').length){
 
-    var signupLocation = $('signup-location');
-    var signupClass = $('signup-class');
-    var signupSource = $('signup-source');
+    var signupLocation = $('#signup-location');
+    var signupClass = $('#signup-class');
+    var signupSource = $('#signup-source');
 
     // Show the location values in the dropdown
     ClubReadyAPI.get_clubs_list().then(function(clubs_list){

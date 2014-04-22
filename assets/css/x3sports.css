@@ -1127,6 +1127,10 @@ aside .callout.signup {
 	appearance: none;
 }
 
+.callout.signup {
+	overflow:visible;
+}
+
 .callout.signup p {
 	margin-top: 30px;
 	font-size: .9em;
@@ -1138,17 +1142,96 @@ aside .callout.signup {
 	font-size: 1.8em;
 }
 
+.callout.signup form > ul {
+	overflow: visible;
+}
+
+.callout.signup form ul.dd-options {
+	overflow: auto;
+}
+
 .callout.signup li.name {
 	width: 47%;
+	display: inline-block;
 }
 
 .callout.signup li.name:first-child {
 	margin-right:10px;
 }
 
-.callout.signup ::-webkit-input-placeholder,
-.callout.signup :-moz-placeholder,
-.callout.signup ::-moz-placeholder,
+.callout.signup textarea {
+	height: 75px;
+	overflow-y: hidden;
+	font-family: 'Open Sans', helvetica, verdana, tahoma, sans-serif;
+	font-size: 1.1em;
+	box-sizing: border-box;
+	background-color: #898989;
+	display: block;
+	border: 1px solid #898989;
+	padding: 7px;
+	font-weight: 700;
+	color: #272726;
+	line-height: 1.05;
+	width: 100%;
+	border-radius: 0;
+}
+
+
+.callout.signup li.radio > input + label {
+	position: static;
+	cursor: pointer;
+	padding: 5px 0;
+}
+
+.callout.signup li.radio > input + label:before {
+	content: '';
+	display: inline-block;
+	margin-right: 10px;
+	background-color: #a9a8a8;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	width: 17px;
+	height: 17px;
+	border: 4px solid #a9a8a8;
+	vertical-align: -8px;
+}
+
+.callout.signup li.radio > input:checked + label:before {
+	background-color: #ffde00;
+	border-color: #ffde00;
+}
+
+.callout.signup li.radio > label,
+.callout.signup li.radio > input[type="radio"] {
+	position: absolute;
+	left: -5000em;
+}
+
+.lt-ie9 .callout.signup li.radio > label:before {
+	display: none;
+}
+
+.lt-ie9 .callout.signup li.radio > input[type="radio"] {
+	position: static;
+	left: 0;
+}
+
+.lt-ie9 .callout.signup li.radio > label,
+.lte-ie9 .callout.signup li.radio > label {
+	position: static;
+	margin-bottom: 5px;
+	font-size: 1.2em;
+}
+
+.callout.signup ::-webkit-input-placeholder {
+	color: #272726;
+}
+.callout.signup :-moz-placeholder {
+	color: #272726;
+}
+.callout.signup ::-moz-placeholder {
+	color: #272726;
+}
 .callout.signup :-ms-input-placeholder {
 	color: #272726;
 }
