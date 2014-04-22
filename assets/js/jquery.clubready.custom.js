@@ -328,6 +328,48 @@ $(function(){
 
 
 
+  // Signup Callout
+  if ($('.callout.signup').length){
+
+    var signupLocation = $('signup-location');
+    var signupClass = $('signup-class');
+    var signupSource = $('signup-source');
+
+    // Show the location values in the dropdown
+    ClubReadyAPI.get_clubs_list().then(function(clubs_list){
+      var locationOptions = $(clubs_list).map(function(i,c){return {text: display_text(c.Name), value: c.Id}}).get();
+      signupLocation.ddslick('data', locationOptions);
+    })
+
+    // Show the class values in the dropdowns
+    ClubReadyAPI.get_full_schedule().then(function(schedule){
+      var classOptions = _(schedule).chain().map(function(e){return {text: e.Title, value: e.ClassId}})
+          // sort by text, uniq on classId, reject empty text values
+          .sort(sortByTextProperty).uniq(true, uniqByValueProperty).reject(emptyTextEntries)
+          // rollup classes with the same name but different classIds
+          .reduce(function(memo, e){
+            if(memo.last.text == e.text){memo.last.value+=','+e.value}
+            else { memo.last = e; memo.list.push(e); }
+            return memo;
+          }, {list:[], last: {}}).value().list;
+      signupClass.ddslick('data', classOptions);
+    })
+
+    signupLocation.on('change', function(){
+      var location_id = $(this).val();
+      var initial_value = signupSource.val();
+      if(location_id){
+        ClubReadyAPI.get_referral_types(location_id).then(function(referral_types){
+          var referral_options = _(referral_types).chain().map(function(e){return {text: e.Name, value: e.Id}}).sort(sortByTextProperty).value();
+          signupSource.ddslick('data', referral_options);
+          if(initial_value) signupSource.ddslick('select', {id: initial_value});
+        })
+      }
+    })
+  }
+
+
+
 
   // Signup Page
   if ($('section.signup').length) {

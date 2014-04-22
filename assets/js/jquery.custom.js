@@ -288,6 +288,12 @@ $(function(){
 
 	} //sign-up page
 
+	if ($('.callout.signup').length){
+
+		$('.callout.signup select').ddslick();
+
+	} // signup callout
+
 
 	if ($('.x3-exp #x3-exp').length) {
 

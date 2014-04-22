@@ -28,23 +28,34 @@ get_header(); ?>
 						<h4>Free Class Signup</h4>
 						<form role="search" method="get" action="<?php echo get_page_link(48); ?>">
 							<ul>
-								<li>
-									<label for="signup-firstname">First Name</label>
-									<input type="text" value="" name="sign-up-first-name" id="signup-firstname">
-								</li>
-								<li>
-									<label for="lastname">Last Name</label>
-									<input type="text" value="" name="sign-up-last-name" id="signup-lastname">
-								</li>
-								<li>
-									<label for="email">Email</label>
-									<input type="text" value="" name="sign-up-email" id="signup-email">
-								</li>
-								<li>
-									<label for="phone">Phone</label>
-									<input type="text" value="" name="sign-up-phone" id="signup-phone">
-								</li>
-							</ul>
+					      <li class="name">
+					        <input type="text" value="" name="sign-up-first-name" id="signup-firstname" placeholder="First Name*">
+					      </li>
+					      <li class="name">
+					        <input type="text" value="" name="sign-up-last-name" id="signup-lastname" placeholder="Last Name*">
+					      </li>
+					      <li>
+					        <input type="text" value="" name="sign-up-email" id="signup-email" placeholder="Email*">
+					      </li>
+					      <li>
+					        <input type="text" value="" name="sign-up-phone" id="signup-phone" placeholder="Phone*">
+					      </li>
+					      <li>
+					        <select name="sign-up-location" id="signup-location">
+					          <option value="">Select Location*</option>
+					        </select>
+					      </li>
+					      <li>
+					        <select name="sign-up-class" id="signup-class">
+					          <option value="">Class Preference*</option>
+					        </select>
+					      </li>
+					      <li>
+					        <select name="sign-up-source" id="signup-source">
+					          <option value="0">How did you hear about us?*</option>
+					        </select>
+					      </li>
+					    </ul>
 							<div>
 								<input type="submit" value="Book My Free Class">
 							</div>
@@ -200,7 +211,7 @@ echo $socialcontent; ?>
 				</aside>
 			</div><!--two-column-->
 
-<?php if (get('related_blog_posts_post_1_id') != '') { ?>			
+<?php if (get('related_blog_posts_post_1_id') != '') { ?>
 						<div id="blog-posts">
 				<ul>
 
@@ -210,11 +221,11 @@ echo $socialcontent; ?>
 <h4><a href="<?php echo get_permalink(get('related_blog_posts_post_1_id')); ?>" title="<?php echo $temppost->post_title; ?>"><?php echo $temppost->post_title; ?></a></h4>
 <p><?php echo get_the_post_excerpt(get('related_blog_posts_post_1_id')); ?></p>
 <a href="<?php echo get_permalink(get('related_blog_posts_post_1_id')); ?>" title="Read more">Read more</a>
-</li> 
+</li>
 
 
 
-<?php if (get('related_blog_posts_post_2_id') != '') { 
+<?php if (get('related_blog_posts_post_2_id') != '') {
 
 $temppost = get_post(get('related_blog_posts_post_2_id')); ?>
 
@@ -222,11 +233,11 @@ $temppost = get_post(get('related_blog_posts_post_2_id')); ?>
 <h4><a href="<?php echo get_permalink(get('related_blog_posts_post_2_id')); ?>" title="<?php echo $temppost->post_title; ?>"><?php echo $temppost->post_title; ?></a></h4>
 <p><?php echo get_the_post_excerpt(get('related_blog_posts_post_2_id')); ?></p>
 <a href="<?php echo get_permalink(get('related_blog_posts_post_2_id')); ?>" title="Read more">Read more</a>
-</li> 
+</li>
 
 <?php }
 
-if (get('related_blog_posts_post_3_id') != '') { 
+if (get('related_blog_posts_post_3_id') != '') {
 
 $temppost = get_post(get('related_blog_posts_post_3_id')); ?>
 
@@ -234,7 +245,7 @@ $temppost = get_post(get('related_blog_posts_post_3_id')); ?>
 <h4><a href="<?php echo get_permalink(get('related_blog_posts_post_3_id')); ?>" title="<?php echo $temppost->post_title; ?>"><?php echo $temppost->post_title; ?></a></h4>
 <p><?php echo get_the_post_excerpt(get('related_blog_posts_post_3_id')); ?></p>
 <a href="<?php echo get_permalink(get('related_blog_posts_post_3_id')); ?>" title="Read more">Read more</a>
-</li> 
+</li>
 
 <?php } ?>
 
