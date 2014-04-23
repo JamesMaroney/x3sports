@@ -43,6 +43,7 @@ get_header(); ?>
 					      <li>
 					        <select name="sign-up-location" id="signup-location">
 					          <option value="">Select Location*</option>
+					          <option value="not sure">Not Sure</option>
 					        </select>
 					      </li>
 					      <li>
@@ -52,7 +53,7 @@ get_header(); ?>
 					      </li>
 					      <li>
 					        <select name="sign-up-source" id="signup-source">
-					          <option value="0">How did you hear about us?*</option>
+					          <option value="0">How did you hear about us?</option>
 					        </select>
 					      </li>
 								<li>
@@ -70,6 +71,7 @@ get_header(); ?>
 							<div>
 								<input type="submit" value="Book My Free Class">
 							</div>
+							<p id="validation-message"></p>
 						</form>
 						<p>Your privacy is important to us. Phone number and email will only be used for scheduling purposes.</p>
 					</div><!--callout-->

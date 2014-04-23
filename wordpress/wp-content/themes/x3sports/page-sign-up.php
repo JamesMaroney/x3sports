@@ -6,7 +6,7 @@ get_header(); ?>
 
 		<section role="main" class="schedule signup">
 			<div class="two-column">
-				<h1>Free Class Sign Up</h1>			
+				<h1>Free Class Sign Up</h1>
 				<article class="loading">
 					<div class="post">
 
@@ -37,6 +37,7 @@ get_header(); ?>
 									<label for="sign-up-location">Select Location</label>
 									<select id="sign-up-location">
 										<option value="">Select Location</option>
+					          <option value="not sure">Not Sure</option>
 									</select>
 								</li>
 								<li>
@@ -64,7 +65,7 @@ get_header(); ?>
 									<label for="schedule-method-self">Reserve spot myself</label>
 								</li>
 							</ul>
-							<mark>* Phone and email are for scheduling purposes. Your privacy is important to us.</mark>							
+							<mark>* Phone and email are for scheduling purposes. Your privacy is important to us.</mark>
 							<h2>Great! Which class would you like to reserve for your free class?</h2>
 							<p>Please select a date and time below.</p>
 						</div><!--user-info-->
@@ -87,14 +88,18 @@ get_header(); ?>
 						{{/each}}
 						</script>
 
-						<p class="cta">Please select a class and location preference to reserve a spot yourself.</p>
+						<p class="cta">Please select a class and specific location to reserve a spot yourself.</p>
 
 						<ul class="days-nav">
 							<li><a href="#" data-week="thisweek" class="bottom">Previous 7 Days</a></li>
 							<li><a href="#" data-week="nextweek" class="bottom">Next 7 Days</a></li>
 						</ul>
 						<h4><input type="submit" value="Sign Up For My Free Class"></h4>
-						<p>Some information appears to be missing. Please update the needed fields and try again.</p>
+						<p>
+							<span id="validation-required">Some information appears to be missing. Please update the needed fields and try again.</span>
+							<span id="validation-phone-length">Please provide a 10 digit phone number.</span>
+							<span id="validation-choose-location">Please select a specific location to reserve spot yourself.</span>
+						</p>
 						<mark>* Phone and email are for scheduling purposes. Your privacy is important to us.</mark>
 					</form>
 				</article>

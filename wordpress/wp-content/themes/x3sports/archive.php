@@ -6,7 +6,7 @@
 			<div class="two-column">
 				<article>
 
-<?php 
+<?php
 
 if (is_category(1)) { ?>
 			<h1>Blog</h1>
@@ -30,13 +30,13 @@ if (have_posts()): while (have_posts()) : the_post(); ?>
 						<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 <?php if ($post->post_type == "post") { ?>
-						<h6><?php the_time('F j, Y'); ?></h6>					
+						<h6><?php the_time('F j, Y'); ?></h6>
 
-<?php } 
-						the_excerpt(); ?>		
+<?php }
+						the_excerpt(); ?>
 					</div><!--post-->
-					
-	
+
+
 <?php endwhile; ?>
 
 				<ul class="post-nav">
@@ -52,7 +52,7 @@ if (have_posts()): while (have_posts()) : the_post(); ?>
 					</div><!--post-->
 
 
-<?php endif; ?>					
+<?php endif; ?>
 				</article>
 				<aside>
 					<div class="callout signup">
@@ -60,26 +60,50 @@ if (have_posts()): while (have_posts()) : the_post(); ?>
 						<h4>Free Class Signup</h4>
 						<form role="search" method="get" action="<?php echo get_page_link(48); ?>">
 							<ul>
+					      <li class="name">
+					        <input type="text" value="" name="sign-up-first-name" id="signup-firstname" placeholder="First Name*">
+					      </li>
+					      <li class="name">
+					        <input type="text" value="" name="sign-up-last-name" id="signup-lastname" placeholder="Last Name*">
+					      </li>
+					      <li>
+					        <input type="text" value="" name="sign-up-email" id="signup-email" placeholder="Email*">
+					      </li>
+					      <li>
+					        <input type="text" value="" name="sign-up-phone" id="signup-phone" placeholder="Phone*">
+					      </li>
+					      <li>
+					        <select name="sign-up-location" id="signup-location">
+					          <option value="">Select Location*</option>
+					          <option value="not sure">Not Sure</option>
+					        </select>
+					      </li>
+					      <li>
+					        <select name="sign-up-class" id="signup-class">
+					          <option value="">Class Preference*</option>
+					        </select>
+					      </li>
+					      <li>
+					        <select name="sign-up-source" id="signup-source">
+					          <option value="0">How did you hear about us?</option>
+					        </select>
+					      </li>
 								<li>
-									<label for="signup-firstname">First Name</label>
-									<input type="text" value="" name="sign-up-first-name" id="signup-firstname">
+									<textarea name="sign-up-goals" id="signup-goals" placeholder="Goals (add if under 18)"></textarea>
 								</li>
-								<li>
-									<label for="lastname">Last Name</label>
-									<input type="text" value="" name="sign-up-last-name" id="signup-lastname">
+								<li class="radio">
+									<input name="schedule-method" type="radio" value="Contact me to schedule" id="schedule-method-contact" checked="checked">
+									<label for="schedule-method-contact">Contact me to schedule</label>
 								</li>
-								<li>
-									<label for="email">Email</label>
-									<input type="text" value="" name="sign-up-email" id="signup-email">
+								<li class="radio">
+									<input name="schedule-method" type="radio" value="Reserve spot myself" id="schedule-method-self">
+									<label for="schedule-method-self">Reserve spot myself</label>
 								</li>
-								<li>
-									<label for="phone">Phone</label>
-									<input type="text" value="" name="sign-up-phone" id="signup-phone">
-								</li>
-							</ul>
+					    </ul>
 							<div>
 								<input type="submit" value="Book My Free Class">
 							</div>
+							<p id="validation-message"></p>
 						</form>
 						<p>Your privacy is important to us. Phone number and email will only be used for scheduling purposes.</p>
 
@@ -92,12 +116,12 @@ if (have_posts()): while (have_posts()) : the_post(); ?>
 						<h4>Recent Posts</h4>
 
 <ul>
-<?php $posts = get_posts(array('category' => 1, 'posts_per_page' => 4)); 
+<?php $posts = get_posts(array('category' => 1, 'posts_per_page' => 4));
   foreach ( $posts as $post ) {	setup_postdata( $post );  ?>
 
-<li><a href="<?php the_permalink(); ?>" title="<?php echo $post->post_title; ?>"><?php echo $post->post_title; ?></a></li> 
+<li><a href="<?php the_permalink(); ?>" title="<?php echo $post->post_title; ?>"><?php echo $post->post_title; ?></a></li>
 
-<?php } 
+<?php }
 wp_reset_postdata(); ?>
 						</ul>
 					</div><!--callout-->

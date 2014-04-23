@@ -366,6 +366,99 @@ $(function(){
         })
       }
     })
+
+
+    // hook into the form submit action
+    $('.callout.signup form').submit(function(){
+
+      // validate required text fields
+      var missing_required = false,
+          validation_message = $('#validation-message').hide();
+      $(this).find('input[type="text"]').each(function(){
+        if(!$(this).val()){
+          missing_required = true;
+          $(this).addClass('error');
+        }
+      });
+      // validate required location selection
+      var loc = $('#signup-location');
+      if( !loc.val() ) {
+        missing_required = true;
+        loc.parents('.dd-container').addClass('error');
+      }
+      // validate required class preference selection
+      var cls = $('#signup-class');
+      if( !cls.val() ){
+        missing_required = true;
+        cls.parents('.dd-container').addClass('error');
+      }
+      // show validation message if required field(s) left blank & return
+      if(missing_required){
+        validation_message
+          .text("Some information appears to be missing. Please update the needed fields and try again.")
+          .slideDown(250);
+        return false;
+      }
+
+      // validate full phone number
+      var phn = $('#signup-phone');
+      if (phn.val().replace(/[^\d]/g, '').length != 10){
+        phn.addClass('error');
+        validation_message
+          .text("Please provide a 10 digit phone number.")
+          .slideDown(250);
+        return false;
+      }
+
+      // validate reserve spot and location selections make sense
+      if($('#schedule-method-self').is(':checked') && loc.val().toLowerCase() == 'not sure'){
+        loc.parents('.dd-container').addClass('error');
+        validation_message
+          .text("Please select a specific location to reserve spot yourself.")
+          .slideDown(250);
+        return false;
+      }
+
+      // passed validation. See if we can submit directly to CR
+      if($('#schedule-method-contact').is(':checked')){
+
+        var self_scheduled = false;
+        var notes = [];
+        var selected_class = $('.dd-option-value[value="' + $('#signup-class').val() + '"]').first().next('label').text()
+        notes.push("Class Preference: " +  selected_class + ", self-scheduled: " + (self_scheduled ? "Yes" : "No"));
+        var goals;
+        if(goals = $('#signup-goals').val()) notes.push("Goals: " + goals);
+
+        var prospect_data = {
+          FirstName: $('#signup-firstname').val(),
+          LastName: $('#signup-lastname').val(),
+          Email: $('#signup-email').val(),
+          Phone: $('#signup-phone').val(),
+          StoreId: $('#signup-location').val(),
+          SendEmail: 'False',
+          Note: notes.join("\n\n")
+        };
+        var referral_type;
+        if(referral_type = $('#sign-up-source').val()) prospect_data.ReferralTypeId = referral_type;
+
+        // Get a list of the prospect types for the location so we can set the
+        // prospect as either "Scheduled" or "Unscheduled"
+        ClubReadyAPI.get_prospect_types(prospect_data.StoreId).then(function(prospect_types){
+
+          // Lookup the Id of the appropriate prospect type
+          prospect_data.ProspectTypeId = _(prospect_types).find(function(type){ return type.Name == (self_scheduled ? "Scheduled" : "Unscheduled")}).Id;
+
+          ClubReadyAPI.save_propect(prospect_data).then(function(){
+            window.location = '/thank-you';
+          })
+        })
+        return false;
+
+      }
+
+    }).find('input,select,texarea').change(function(){
+      $(this).parents('.error').andSelf().removeClass('error');
+    })
   }
 
 
@@ -383,6 +476,8 @@ $(function(){
     ClubReadyAPI.get_clubs_list().then(function(clubs_list){
       var locationOptions = $(clubs_list).map(function(i,c){return {text: display_text(c.Name), value: c.Id}}).get();
       signupLocation.ddslick('data', locationOptions);
+      var initial_value = signupLocation.data('initialvalue');
+      if(initial_value) signupLocation.ddslick('select', {id: initial_value});
     })
 
     // Show the class values in the dropdowns
@@ -397,11 +492,14 @@ $(function(){
             return memo;
           }, {list:[], last: {}}).value().list;
       signupClass.ddslick('data', classOptions);
+      var initial_value = signupClass.data('initialvalue');
+      if(initial_value) signupClass.ddslick('select', {id: initial_value});
     })
 
     signupLocation.on('change', function(){
       var location_id = $(this).val();
       var initial_value = signupSource.val();
+      if(initial_value == '0') initial_value = signupSource.data('initialvalue');
       if(location_id){
         ClubReadyAPI.get_referral_types(location_id).then(function(referral_types){
           var referral_options = _(referral_types).chain().map(function(e){return {text: e.Name, value: e.Id}}).sort(sortByTextProperty).value();
@@ -435,7 +533,7 @@ $(function(){
     var update_schedule_view = function(){
 
       // If all values are not provided, remove the schedule
-      if( !signupLocation.val() || !signupClass.val() || !scheduleSelf.is(':checked')){
+      if( !signupLocation.val() || signupLocation.val().toLowerCase() == 'not sure' || !signupClass.val() || !scheduleSelf.is(':checked')){
         $('article .day-list, .user-info > h2,  .user-info > p').slideUp(250, function(){
             $('#days-list').empty()
         });
@@ -519,8 +617,16 @@ $(function(){
     if(match = window.location.search.match(/sign-up-([\w-]+)=([^&]+)/g)){
       _(match).each(function(match){
         match = match.split('=');
-        $('#'+match[0]).val(decodeURIComponent(match[1].replace(/\+/g, '%20')));
+        var value = decodeURIComponent(match[1].replace(/\+/g, '%20')),
+            target = $('#'+match[0]);
+
+        target.is('.dd-selected-value') ? target.data('initialvalue', value) : target.val(value);
       })
+    }
+
+    if(match = window.location.search.match(/schedule-method=reserve\+spot\+myself/i)){
+      $('#schedule-method-self').click();
+      $(window).scrollTop($('#days-list').offset().top);
     }
 
     $('article form').on('validation-passed', function(){

@@ -217,12 +217,16 @@ $(function(){
 		$('article form').submit(function() {
 
 			$('form h4 + p').slideUp(250);
-			$('form h4 + p + p').slideUp(250);
+			$('form h4 + p span').hide();
 			var hasErrors = false;
+			var required_message = $('#validation-required');
+			var phone_length_message = $('#validation-phone-length');
+			var choose_location_message = $('#validation-choose-location');
 
 			$('.user-info input[type="text"]').each(function() {
 				if (!$(this).val()) {
 					$(this).addClass('error');
+					required_message.show();
 					hasErrors = true;
 				} else {
 					$(this).removeClass('error');
@@ -233,6 +237,7 @@ $(function(){
 				if(this.id == 'sign-up-source') return;
 				if (!$(this).val()) {
 					$(this).parent().parent().addClass('error');
+					required_message.show();
 					hasErrors = true;
 				} else {
 					$(this).parent().parent().removeClass('error');
@@ -242,10 +247,24 @@ $(function(){
 			if ($('.user-info input[type="radio"]:checked').val() == "Reserve spot myself" && $('form [name="ScheduleId"]:checked').val() == null) {
 				$('.user-info > p').show();
 				hasErrors = true;
+				required_message.show();
 			} else {
 				$('.user-info > p').hide();
 			}
 
+      var phn = $('#sign-up-phone');
+      if (!hasErrors && phn.val().replace(/[^\d]/g, '').length != 10){
+        phn.addClass('error');
+        phone_length_message.show();
+        hasErrors = true;
+      }
+
+      var loc = required_message.show();
+      if (!hasErrors && $('#schedule-method-self').is(':checked') && loc.val().toLowerCase() == 'not sure'){
+      	loc.parents('.dd-container').addClass('error');
+      	choose_location_message.show();
+      	hasErrors = true;
+      }
 
 			if (hasErrors) {
 				$('form h4 + p').slideDown(250);
