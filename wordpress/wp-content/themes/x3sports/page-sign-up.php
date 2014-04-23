@@ -94,7 +94,7 @@ get_header(); ?>
 							<li><a href="#" data-week="thisweek" class="bottom">Previous 7 Days</a></li>
 							<li><a href="#" data-week="nextweek" class="bottom">Next 7 Days</a></li>
 						</ul>
-						<h4><input type="submit" value="Sign Up For My Free Class"></h4>
+						<h4><input type="submit" value="Submit"></h4>
 						<p>
 							<span id="validation-required">Some information appears to be missing. Please update the needed fields and try again.</span>
 							<span id="validation-phone-length">Please provide a 10 digit phone number.</span>

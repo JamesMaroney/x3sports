@@ -1174,6 +1174,9 @@ aside .callout.signup {
 	line-height: 1.05;
 	width: 100%;
 	border-radius: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;	
 }
 
 .callout.signup li.radio {
@@ -1295,7 +1298,7 @@ aside .callout.signup {
 	appearance: none;
 }
 
-.callout form ul input:focus {
+.callout form ul input:focus, .callout form textarea:focus {
 	border-color: #ffde00;
 	background-color: #aaa;
 }
@@ -1437,6 +1440,8 @@ article .half-col {
 	cursor: pointer;
 	background-color: #a9a8a8 !important;
 	width: 100% !important;
+	border: none !important;
+	border-radius: 0 !important;
 }
 
 /*.dd-desc {
@@ -2046,7 +2051,7 @@ article .half-col {
 	background-color: #ffde00;
 	position: relative;
 	margin: 0 auto;
-	width: 360px;
+	width: 145px;
 }
 
 .signup form h4:hover {
@@ -3172,6 +3177,10 @@ section > article h1, .locations .content article h1 {
 	margin-top: 1.25em;
 }
 
+.signup .user-info h2 {
+	font-size: .85em;
+}
+
 .signup .user-info mark {
 	display: none;
 }
@@ -3203,7 +3212,7 @@ section > article h1, .locations .content article h1 {
 }
 
 .signup form h4 {
-	width: 280px;
+	width: 125px;
 }
 
 .signup form h4:after {
@@ -3212,8 +3221,8 @@ section > article h1, .locations .content article h1 {
 }
 
 .signup form h4 input[type="submit"] {
-	font: 600 1.3em 'Titillium Web';
-	padding: 10px 25px 10px 10px;
+	font-size: 1.5em;
+	padding: 5px 25px 5px 5px;
 }
 
 .signup form h4 + p {
