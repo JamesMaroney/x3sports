@@ -1088,6 +1088,8 @@ aside .callout.signup {
 .callout form > div {
 	background-color: #ffde00;
 	position: relative;
+	clear: both;
+	width: 120px;
 }
 
 .callout form > div:hover {
@@ -1105,7 +1107,7 @@ aside .callout.signup {
 	position: absolute;
 	top: 50%;
 	right: 15px;
-	margin-top: -6px;
+	margin-top: -7px;
 }
 
 .callout form input[type="submit"] {
@@ -3397,7 +3399,7 @@ html.popup article {
 	float: left;
 }
 
-#header nav > ul > li:first-child {
+#header nav > ul.main > li:first-child {
 	display: none;
 }
 
