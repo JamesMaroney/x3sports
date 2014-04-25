@@ -258,7 +258,8 @@ $(function(){
     },
 
     // register a new prospect in Club Ready
-    save_propect: function(prospect_data){
+    save_prospect: function(prospect_data){
+      if(prospect_data.StoreId && prospect_data.StoreId.toLowerCase() == 'not sure') prospect_data.StoreId = "231,230,994";
       return ClubReadyAPI.post('http://www.clubready.com/api/users/prospect', _.extend({}, ClubReadyAPI.common_data, prospect_data));
     },
 
@@ -448,7 +449,7 @@ $(function(){
           // Lookup the Id of the appropriate prospect type
           prospect_data.ProspectTypeId = _(prospect_types).find(function(type){ return type.Name == (self_scheduled ? "Scheduled" : "Unscheduled")}).Id;
 
-          ClubReadyAPI.save_propect(prospect_data).then(function(){
+          ClubReadyAPI.save_prospect(prospect_data).then(function(){
             window.location = '/thank-you';
           })
         })
@@ -654,9 +655,10 @@ $(function(){
       ClubReadyAPI.get_prospect_types(prospect_data.StoreId).then(function(prospect_types){
 
         // Lookup the Id of the appropriate prospect type
-        prospect_data.ProspectTypeId = _(prospect_types).find(function(type){ return type.Name == (self_scheduled ? "Scheduled" : "Unscheduled")}).Id;
+        if(prospect_types)
+          prospect_data.ProspectTypeId = _(prospect_types).find(function(type){ return type.Name == (self_scheduled ? "Scheduled" : "Unscheduled")}).Id;
 
-        ClubReadyAPI.save_propect(prospect_data)
+        ClubReadyAPI.save_prospect(prospect_data)
                     .then(function(user_data){
                       if(!self_scheduled){
                         window.location = window.location.href.replace('sign-up', 'thank-you');
