@@ -232,16 +232,7 @@ $(function(){
 
     get_referral_types: function(store_id){
       var deferred = $.Deferred();
-
-      var values = {
-        // Marietta (230)
-        230: [{ Name: "Internet Search", Id: 1164 }, { Name: "Social Media", Id: 14880 }, { Name: "Flyer", Id: 1154 }, { Name: "Direct Mail", Id: 1151 }, { Name: "Local Event", Id: 14881 }, { Name: "X3 Employee", Id: 14882 }, { Name: "X3 Member", Id: 1021 }, { Name: "Friend (Non-member)", Id: 1160 }, { Name: "Other", Id: 14883 }],
-        // Inman Park (231)
-        231: [{ Name: "Internet Search", Id: 1061 }, { Name: "Social Media ", Id: 14880 }, { Name: "Flyer", Id: 1052 }, { Name: "Direct Mail", Id: 1049 }, { Name: "Local Event", Id: 14881 }, { Name: "X3 Employee", Id: 14882 }, { Name: "X3 Member", Id: 1023 }, { Name: "Friend (Non-member)", Id: 1057 }, { Name: "Other", Id: 14883 }],
-        // Midtown (994)
-        994: [{ Name: "Internet Search", Id: 5543 }, { Name: "Social Media", Id: 14880 }, { Name: "Flyer", Id: 5535 }, { Name: "Direct Mail", Id: 5532 }, { Name: "Local Event", Id: 14881 }, { Name: "X3 Employee", Id: 14882 }, { Name: "X3 Member", Id: 5526 }, { Name: "Friend (Non-member)", Id: 5539 }, { Name: "Other", Id: 14883 }]
-      };
-      deferred.resolve(values[store_id]);
+      deferred.resolve([{ Id: 15226, Name: "Direct Mail" }, { Id: 15227, Name: "Flyer" }, { Id: 15228, Name: "Friend (Non-Member)" }, { Id: 15229, Name: "Internet Search" }, { Id: 14881, Name: "Local Event" }, { Id: 14880, Name: "Social Media" }, { Id: 14882, Name: "X3 Employee" }, { Id: 15240, Name: "X3 Member" }, { Id: 14883, Name: "Other" } ]);
       return deferred;
     },
 
@@ -356,17 +347,12 @@ $(function(){
       signupClass.ddslick('data', classOptions);
     })
 
-    signupLocation.on('change', function(){
-      var location_id = $(this).val();
-      var initial_value = signupSource.val();
-      if(location_id){
-        ClubReadyAPI.get_referral_types(location_id).then(function(referral_types){
-          var referral_options = _(referral_types).chain().map(function(e){return {text: e.Name, value: e.Id}}).sort(sortByTextProperty).value();
-          signupSource.ddslick('data', referral_options);
-          if(initial_value) signupSource.ddslick('select', {id: initial_value});
-        })
-      }
+    ClubReadyAPI.get_referral_types().then(function(referral_types){
+      var referral_options = _(referral_types).chain().map(function(e){return {text: e.Name, value: e.Id}}).sort(sortByTextProperty).value();
+      signupSource.ddslick('data', referral_options);
     })
+
+
 
 
     // hook into the form submit action
@@ -447,7 +433,8 @@ $(function(){
         ClubReadyAPI.get_prospect_types(prospect_data.StoreId).then(function(prospect_types){
 
           // Lookup the Id of the appropriate prospect type
-          prospect_data.ProspectTypeId = _(prospect_types).find(function(type){ return type.Name == (self_scheduled ? "Scheduled" : "Unscheduled")}).Id;
+          if(prospect_types)
+            prospect_data.ProspectTypeId = _(prospect_types).find(function(type){ return type.Name == (self_scheduled ? "Scheduled" : "Unscheduled")}).Id;
 
           ClubReadyAPI.save_prospect(prospect_data).then(function(){
             window.location = '/thank-you';
@@ -497,18 +484,13 @@ $(function(){
       if(initial_value) signupClass.ddslick('select', {id: initial_value});
     })
 
-    signupLocation.on('change', function(){
-      var location_id = $(this).val();
-      var initial_value = signupSource.val();
-      if(initial_value == '0') initial_value = signupSource.data('initialvalue');
-      if(location_id){
-        ClubReadyAPI.get_referral_types(location_id).then(function(referral_types){
-          var referral_options = _(referral_types).chain().map(function(e){return {text: e.Name, value: e.Id}}).sort(sortByTextProperty).value();
-          signupSource.ddslick('data', referral_options);
-          if(initial_value) signupSource.ddslick('select', {id: initial_value});
-        })
-      }
+    ClubReadyAPI.get_referral_types().then(function(referral_types){
+      var referral_options = _(referral_types).chain().map(function(e){return {text: e.Name, value: e.Id}}).sort(sortByTextProperty).value();
+      signupSource.ddslick('data', referral_options);
+      var initial_value = signupSource.data('initialvalue');
+      if(initial_value) signupSource.ddslick('select', {id: initial_value});
     })
+
 
     // function to show/hide text regarding choosing a class
     var update_helpful_text = function(){
