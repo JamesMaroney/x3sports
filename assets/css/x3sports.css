@@ -1088,6 +1088,8 @@ aside .callout.signup {
 .callout form > div {
 	background-color: #ffde00;
 	position: relative;
+	clear: both;
+	width: 120px;
 }
 
 .callout form > div:hover {
@@ -1105,7 +1107,7 @@ aside .callout.signup {
 	position: absolute;
 	top: 50%;
 	right: 15px;
-	margin-top: -6px;
+	margin-top: -7px;
 }
 
 .callout form input[type="submit"] {
@@ -1148,15 +1150,6 @@ aside .callout.signup {
 
 .callout.signup form ul.dd-options {
 	overflow: auto;
-}
-
-.callout.signup li.name {
-	width: 47%;
-	display: inline-block;
-}
-
-.callout.signup li.name:first-child {
-	margin-right:10px;
 }
 
 .callout.signup textarea {
@@ -1260,6 +1253,8 @@ aside .callout.signup {
 
 .callout.signup #validation-message {
 	color: #AC2C2E;
+	display: block;
+	clear: both;
 }
 
 .callout.subscribe h4 {
@@ -3397,7 +3392,7 @@ html.popup article {
 	float: left;
 }
 
-#header nav > ul > li:first-child {
+#header nav > ul.main > li:first-child {
 	display: none;
 }
 
@@ -4084,6 +4079,10 @@ footer .content .col:nth-child(2) {
 	margin-right: 20px;
 }
 
+.callout.signup form ul li .dd-container {
+	width: 293px !important;
+}
+
 .callout.recent li {
 	margin-bottom: 10px;
 }
@@ -4300,6 +4299,19 @@ article .half-col + .half-col {
 
 .interior .universal-2 h1 {
 	padding-top: 0;
+}
+
+.callout form > div {
+	float: right;
+}
+
+.callout.signup li.name {
+	width: 47%;
+	display: inline-block;
+}
+
+.callout.signup li.name:first-child {
+	margin-right:10px;
 }
 
 

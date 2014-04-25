@@ -81,7 +81,7 @@
 								</li>
 					    </ul>
 							<div>
-								<input type="submit" value="Book My Free Class">
+								<input type="submit" value="Submit">
 							</div>
 							<p id="validation-message"></p>
 						</form>
