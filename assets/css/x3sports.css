@@ -165,8 +165,8 @@ a#free-class:after {
 }
 
 a#free-class:hover {
-	color: #fff;	
-	background-color: #ac2d2e;	
+	color: #fff;
+	background-color: #ac2d2e;
 }
 
 a#free-class:hover:after {
@@ -2781,7 +2781,7 @@ footer .col:nth-child(1) .section:last-child {
 
 .success .story .image .before {
 	bottom: -60px;
-	right: 15px;	
+	right: 15px;
 }
 
 .success .story .image .before img {
