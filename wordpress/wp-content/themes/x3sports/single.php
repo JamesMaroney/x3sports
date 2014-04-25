@@ -41,15 +41,19 @@
 						<form role="search" method="get" action="<?php echo get_page_link(48); ?>">
 							<ul>
 					      <li class="name">
+					      	<label style="display:none">First Name*</label>
 					        <input type="text" value="" name="sign-up-first-name" id="signup-firstname" placeholder="First Name*">
 					      </li>
 					      <li class="name">
+					      	<label style="display:none">Last Name*</label>
 					        <input type="text" value="" name="sign-up-last-name" id="signup-lastname" placeholder="Last Name*">
 					      </li>
 					      <li>
+					      	<label style="display:none">Email*</label>
 					        <input type="text" value="" name="sign-up-email" id="signup-email" placeholder="Email*">
 					      </li>
 					      <li>
+					      	<label style="display:none">Phone*</label>
 					        <input type="text" value="" name="sign-up-phone" id="signup-phone" placeholder="Phone*">
 					      </li>
 					      <li>
@@ -69,6 +73,7 @@
 					        </select>
 					      </li>
 								<li>
+					      	<label style="display:none">Goals (add if under 18)</label>
 									<textarea name="sign-up-goals" id="signup-goals" placeholder="Goals (add if under 18)"></textarea>
 								</li>
 								<li class="radio">
