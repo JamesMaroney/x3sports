@@ -1152,15 +1152,6 @@ aside .callout.signup {
 	overflow: auto;
 }
 
-.callout.signup li.name {
-	width: 47%;
-	display: inline-block;
-}
-
-.callout.signup li.name:first-child {
-	margin-right:10px;
-}
-
 .callout.signup textarea {
 	height: 75px;
 	overflow-y: hidden;
@@ -4088,6 +4079,10 @@ footer .content .col:nth-child(2) {
 	margin-right: 20px;
 }
 
+.callout.signup form ul li .dd-container {
+	width: 293px !important;
+}
+
 .callout.recent li {
 	margin-bottom: 10px;
 }
@@ -4308,6 +4303,15 @@ article .half-col + .half-col {
 
 .callout form > div {
 	float: right;
+}
+
+.callout.signup li.name {
+	width: 47%;
+	display: inline-block;
+}
+
+.callout.signup li.name:first-child {
+	margin-right:10px;
 }
 
 
