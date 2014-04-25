@@ -72,6 +72,9 @@
 		})();
 		</script>
 		<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6008577872906&amp;value=0" /></noscript>
+
+		<script type="text/javascript"> if (!window.mstag) mstag = {loadTag : function(){},time : (new Date()).getTime()};</script> <script id="mstag_tops" type="text/javascript" src="//flex.msn.com/mstag/site/122fe662-5d5d-43b8-bc89-a84d3a599840/mstag.js"></script> <script type="text/javascript"> mstag.loadTag("analytics", {dedup:"1",domainId:"565246",type:"1",actionid:"65106"})</script> <noscript> <iframe src="//flex.msn.com/mstag/tag/122fe662-5d5d-43b8-bc89-a84d3a599840/analytics.html?dedup=1&domainId=565246&type=1&actionid=65106" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"> </iframe> </noscript>
+
 */ ?>
 
 		<?php }

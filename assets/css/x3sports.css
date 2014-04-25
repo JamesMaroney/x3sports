@@ -1088,6 +1088,8 @@ aside .callout.signup {
 .callout form > div {
 	background-color: #ffde00;
 	position: relative;
+	clear: both;
+	width: 120px;
 }
 
 .callout form > div:hover {
@@ -1105,7 +1107,7 @@ aside .callout.signup {
 	position: absolute;
 	top: 50%;
 	right: 15px;
-	margin-top: -6px;
+	margin-top: -7px;
 }
 
 .callout form input[type="submit"] {
@@ -1127,10 +1129,132 @@ aside .callout.signup {
 	appearance: none;
 }
 
+.callout.signup {
+	overflow:visible;
+}
+
 .callout.signup p {
 	margin-top: 30px;
 	font-size: .9em;
 	color: #272726;
+}
+
+.callout.signup h4 {
+	color: #272726;
+	font-size: 1.8em;
+}
+
+.callout.signup form > ul {
+	overflow: visible;
+}
+
+.callout.signup form ul.dd-options {
+	overflow: auto;
+}
+
+.callout.signup textarea {
+	height: 75px;
+	overflow-y: hidden;
+	font-family: 'Open Sans', helvetica, verdana, tahoma, sans-serif;
+	font-size: 1.1em;
+	box-sizing: border-box;
+	background-color: #898989;
+	display: block;
+	border: 1px solid #898989;
+	padding: 7px;
+	font-weight: 700;
+	color: #272726;
+	line-height: 1.05;
+	width: 100%;
+	border-radius: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+.callout.signup li.radio {
+	margin-bottom: 0;
+}
+
+.callout.signup li.radio > input + label {
+	position: static;
+	cursor: pointer;
+	padding: 5px 0;
+}
+
+.callout.signup li.radio > input + label:before {
+	content: '';
+	display: inline-block;
+	margin-right: 10px;
+	background-color: #a9a8a8;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	width: 17px;
+	height: 17px;
+	border: 4px solid #a9a8a8;
+	vertical-align: -8px;
+}
+
+.callout.signup li.radio > input:checked + label:before {
+	background-color: #ffde00;
+	border-color: #ffde00;
+}
+
+.callout.signup li.radio > label,
+.callout.signup li.radio > input[type="radio"] {
+	position: absolute;
+	left: -5000em;
+}
+
+.lt-ie9 .callout.signup li.radio > label:before {
+	display: none;
+}
+
+.lt-ie9 .callout.signup li.radio > input[type="radio"] {
+	position: static;
+	left: 0;
+}
+
+.lt-ie9 .callout.signup li.radio > label,
+.lte-ie9 .callout.signup li.radio > label {
+	position: static;
+	margin-bottom: 5px;
+	font-size: 1.2em;
+}
+
+.callout.signup ::-webkit-input-placeholder {
+	color: #272726;
+}
+.callout.signup :-moz-placeholder {
+	color: #272726;
+}
+.callout.signup ::-moz-placeholder {
+	color: #272726;
+}
+.callout.signup :-ms-input-placeholder {
+	color: #272726;
+}
+
+.callout.signup .dd-container {
+	width: 252px !important;
+	border-color: #898989;
+}
+
+.callout.signup .dd-select {
+	border: none;
+	border-radius: none;
+	background-color: #898989 !important;
+}
+
+.callout.signup form ul label,
+.callout.signup form ul input {
+	font-size:1.1em;
+}
+
+.callout.signup #validation-message {
+	color: #AC2C2E;
+	display: block;
+	clear: both;
 }
 
 .callout.subscribe h4 {
@@ -1169,7 +1293,7 @@ aside .callout.signup {
 	appearance: none;
 }
 
-.callout form ul input:focus {
+.callout form ul input:focus, .callout form textarea:focus {
 	border-color: #ffde00;
 	background-color: #aaa;
 }
@@ -1311,6 +1435,8 @@ article .half-col {
 	cursor: pointer;
 	background-color: #a9a8a8 !important;
 	width: 100% !important;
+	border: none !important;
+	border-radius: 0 !important;
 }
 
 /*.dd-desc {
@@ -1662,7 +1788,10 @@ article .half-col {
 	padding: 20px;
 }
 
-.signup .user-info, .signup #confirmation {
+.signup .user-info {
+	position: relative;
+}
+.signup #confirmation {
 	overflow: hidden;
 	position: relative;
 }
@@ -1744,7 +1873,8 @@ article .half-col {
 	background-color: #ddd;
 }
 
-.signup .user-info li > input.error, .signup .user-info li textarea.error, .signup .dd-container.error {
+.signup .user-info li > input.error, .signup .user-info li textarea.error, .signup .dd-container.error,
+.callout.signup input.error, .callout.signup textarea.error, .callout.signup .dd-container.error {
 	border-color: red;
 }
 
@@ -1777,9 +1907,33 @@ article .half-col {
 }
 
 .signup .user-info h2 {
-	font-size: 1.4em;
+	font-size: 1.18em;
 	font-weight: 400;
+	font-style: italic;
 	display: none;
+	overflow: hidden;
+	position: relative;
+	padding: 0 40px 10px 40px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.signup .user-info h2:before, .signup .user-info h2:after {
+	position: absolute;
+	bottom: 0;
+	width: 28px;
+	height: 28px;
+	content: '';
+}
+
+.signup .user-info h2:before {
+	background-image: url(../images/bg-signup-arrow-left.png);
+	left: 0;
+}
+
+.signup .user-info h2:after {
+	background-image: url(../images/bg-signup-arrow-right.png);
+	right: 0;
 }
 
 .signup .user-info > p {
@@ -1788,14 +1942,29 @@ article .half-col {
 	display: none;
 }
 
-.signup ol li {
+.schedule.signup .day-list h3 {
+	border-width: 7px 7px 7px 12px;
+	line-height: 26px;
+	background-size: 26px 26px;
+}
+
+.schedule.signup .day-list ol {
+	background-color: #2a2a29;
+	overflow: hidden;
+	border-top: 1px solid #3e3e3d;
+}
+
+.schedule.signup .day-list ol li {
 	padding: 8px 20px;
 	position: relative;
 	overflow: hidden;
+	margin-top: 0;
 }
 
-.signup .day-list {
+.schedule.signup .day-list {
 	display: none;
+	margin-top: 0;
+	margin-bottom: 3px;
 }
 
 .signup ol li input {
@@ -1877,7 +2046,7 @@ article .half-col {
 	background-color: #ffde00;
 	position: relative;
 	margin: 0 auto;
-	width: 360px;
+	width: 145px;
 }
 
 .signup form h4:hover {
@@ -1926,7 +2095,7 @@ article .half-col {
 
 .signup form p.cta {
 	display: none;
-	margin: 15px auto 0 auto;
+	margin: 0 auto 15px;
 	text-align: center;
 }
 
@@ -3003,6 +3172,10 @@ section > article h1, .locations .content article h1 {
 	margin-top: 1.25em;
 }
 
+.signup .user-info h2 {
+	font-size: .85em;
+}
+
 .signup .user-info mark {
 	display: none;
 }
@@ -3034,7 +3207,7 @@ section > article h1, .locations .content article h1 {
 }
 
 .signup form h4 {
-	width: 280px;
+	width: 125px;
 }
 
 .signup form h4:after {
@@ -3043,8 +3216,8 @@ section > article h1, .locations .content article h1 {
 }
 
 .signup form h4 input[type="submit"] {
-	font: 600 1.3em 'Titillium Web';
-	padding: 10px 25px 10px 10px;
+	font-size: 1.5em;
+	padding: 5px 25px 5px 5px;
 }
 
 .signup form h4 + p {
@@ -3219,7 +3392,7 @@ html.popup article {
 	float: left;
 }
 
-#header nav > ul > li:first-child {
+#header nav > ul.main > li:first-child {
 	display: none;
 }
 
@@ -3528,6 +3701,26 @@ article .half-col + .half-col + * {
 .locations .slider-controls ul li:hover, .locations .slider-controls ul li.active {
 	color: #777;
 }
+
+.schedule.signup .day-list ol li {
+	float: left;
+	display: block;
+	width: 33.3%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.schedule.signup .day-list ol li label:hover {
+	color: #D6D6D6;
+}
+
+.schedule.signup .day-list ol li label {
+	font-size: .9em;
+}
+
 
 } /* > 670px */
 
@@ -3886,6 +4079,10 @@ footer .content .col:nth-child(2) {
 	margin-right: 20px;
 }
 
+.callout.signup form ul li .dd-container {
+	width: 293px !important;
+}
+
 .callout.recent li {
 	margin-bottom: 10px;
 }
@@ -4104,6 +4301,19 @@ article .half-col + .half-col {
 	padding-top: 0;
 }
 
+.callout form > div {
+	float: right;
+}
+
+.callout.signup li.name {
+	width: 47%;
+	display: inline-block;
+}
+
+.callout.signup li.name:first-child {
+	margin-right:10px;
+}
+
 
 } /* > 1025px */
 
@@ -4177,7 +4387,15 @@ footer ul.social li:last-child a {
 	background-size: 79px auto;
 }
 
+.signup .user-info h2:before {
+	background-image: url(../images/bg-signup-arrow-left-2x.png);
+	background-size: 28px 28px;
+}
 
+.signup .user-info h2:after {
+	background-image: url(../images/bg-signup-arrow-right-2x.png);
+	background-size: 28px 28px;
+}
 
 
 

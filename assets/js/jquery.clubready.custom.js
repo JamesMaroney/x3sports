@@ -353,6 +353,8 @@ $(function(){
     })
 
 
+
+
     // hook into the form submit action
     $('.callout.signup form').submit(function(){
 
@@ -488,6 +490,7 @@ $(function(){
       var initial_value = signupSource.data('initialvalue');
       if(initial_value) signupSource.ddslick('select', {id: initial_value});
     })
+
 
     // function to show/hide text regarding choosing a class
     var update_helpful_text = function(){
