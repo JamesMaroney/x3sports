@@ -426,7 +426,7 @@ $(function(){
           Note: notes.join("\n\n")
         };
         var referral_type;
-        if(referral_type = $('#sign-up-source').val()) prospect_data.ReferralTypeId = referral_type;
+        if(referral_type = $('#signup-source').val()) prospect_data.ReferralTypeId = referral_type;
 
         // Get a list of the prospect types for the location so we can set the
         // prospect as either "Scheduled" or "Unscheduled"
