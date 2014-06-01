@@ -82,9 +82,9 @@ get_header(); ?>
 			<div class="slider-controls">
 				<ul>
 					<li class="active">Kickboxing</li>
-					<li>Fast Track</li>
+					<li>Fast Track&#8480;</li>
 					<li>MMA</li>
-					<li>Power Track</li>
+					<li>Power Track&#8480;</li>
 					<li>Boxing</li>
 					<li>Brazilian Jiu Jitsu</li>
 					<li>Yoga</li>
