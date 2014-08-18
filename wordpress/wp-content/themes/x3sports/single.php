@@ -26,6 +26,11 @@
 					</div><!--details-->
 <?php } ?>
 
+					<div class="details">
+						<h6>Comments</h6>
+						 <?php comments_template(); ?>
+					</div><!--details-->
+
 <?php if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) { ?>
 					<div class="details">
 						<h6>Share Blog Post</h6>

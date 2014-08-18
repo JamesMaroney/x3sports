@@ -51,7 +51,7 @@ body > iframe {
 
 #header div > a, .mobile-nav > a {
 	display: block;
-	max-width: 261px;
+	max-width: 222px;
 	height: auto;
 	float: left;
 }
