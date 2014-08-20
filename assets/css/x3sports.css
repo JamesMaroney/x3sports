@@ -4204,6 +4204,10 @@ article .half-col + .half-col {
 
 @media only screen and (min-width: 64.5em) {
 
+#header div > a {
+	margin-left: 10px;
+}
+
 #header nav {
 	background: url(../images/header-slogan.png) no-repeat 10px 11px;
 }
