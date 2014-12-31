@@ -2291,95 +2291,6 @@ html.popup article strong {
 	font-weight: 700;
 }
 
-.x3-exp .points-steps {
-	background-color: #3e3e3d;
-	color: #dfdfdf;
-	padding: 30px 0;
-	margin-bottom: 30px;
-}
-
-.x3-exp .points-steps ol {
-	margin: 0 auto;
-	overflow: hidden;
-	width: 970px;
-}
-
-.x3-exp .points-steps ol > li {
-	float: left;
-	width: 310px;
-	margin-right: 20px;
-}
-
-.x3-exp .points-steps ol > li:last-child {
-	margin: 0;
-}
-
-.x3-exp .points-steps h3 {
-	font-weight: 800;
-	line-height: 1;
-	text-transform: uppercase;
-	font-size: 1.4em;
-	margin-bottom: 10px;
-	letter-spacing: .03em;
-}
-
-.x3-exp .points-steps h2 {
-	font-weight: 800;
-	line-height: 1;
-	font-size: 2.2em;
-	margin-bottom: 15px;
-	color: #ffde00;
-}
-
-.x3-exp .points-steps p, .x3-exp .points-steps ul {
-	font-size: 1.1em;
-	margin-bottom: 1em;
-}
-
-.x3-exp .points-steps ul {
-	list-style-type: disc;
-	padding-left: 20px;
-}
-
-
-
-.x3-exp .points-steps ul.social-opts {
-	overflow: hidden;
-	padding: 0;
-	list-style-type: none;
-}
-
-.x3-exp .points-steps ul.social-opts li {
-	float: left;
-	margin-right: 7px;
-}
-
-.x3-exp .points-steps ul.social-opts a {
-	display: block;
-	width: 40px;
-	height: 40px;
-	overflow: hidden;
-	text-indent: -50em;
-	border: 1px solid #323231;
-	background: #323231 url(../images/sprite-x3-exp.png) no-repeat;
-}
-
-.x3-exp .points-steps ul.social-opts a:hover {
-	border-color: #ffdd00;
-}
-
-.x3-exp .points-steps ul.social-opts li:first-child a {
-	background-position: 13px 7px;
-}
-
-.x3-exp .points-steps ul.social-opts li:nth-child(2) a {
-	background-position: -34px 7px;
-}
-
-.x3-exp .points-steps ul.social-opts li:nth-child(3) a {
-	background-position: -80px 7px;
-}
-
 
 .x3-exp article {
 	padding: 0 10px;
@@ -3309,35 +3220,6 @@ html.popup article {
 	background-image: url(../images/bg-locations-slider-next-2x.png);
 }
 
-.x3-exp .points-steps {
-	margin-bottom: 0;
-}
-
-.x3-exp .points-steps ol {
-	width: auto;
-	padding: 0 10px;
-}
-
-.x3-exp .points-steps ol > li {
-	float: none;
-	width: auto;
-	margin-right: 0;
-	margin-bottom: 1em;
-	border-bottom: 1px solid #61615f;
-}
-
-.x3-exp .points-steps ol > li:last-child {
-	margin: 0;
-	border: none;
-}
-
-.x3-exp .points-steps h3 {
-	font-size: 1.2em;
-}
-
-.x3-exp .points-steps h2 {
-	font-size: 1.5em;
-}
 
 .x3-exp article {
 	padding: 0;
@@ -4175,25 +4057,6 @@ article .half-col + .half-col {
 	padding: 50px 50px 50px 0;
 }
 
-.x3-exp .points-steps {
-	margin-bottom: 10px;
-}
-
-.x3-exp .points-steps ol {
-	width: 660px;
-}
-
-.x3-exp .points-steps ol > li {
-	width: 200px;
-}
-
-.x3-exp .points-steps h2 {
-	font-size: 1.5em;
-}
-
-.x3-exp .points-steps p, .x3-exp .points-steps ul {
-	font-size: .9em;
-}
 
 .x3-exp #x3-exp {
 	width: 660px;
