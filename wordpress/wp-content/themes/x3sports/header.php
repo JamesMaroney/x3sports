@@ -44,7 +44,6 @@
 		
 		if (is_page(2545)) { ?>
 
-<?php /*		
 		<!-- Google Code for Free Session Form Conversion Page -->
 		<script language="JavaScript" type="text/javascript">
 		<!--
@@ -75,26 +74,47 @@
 
 		<script type="text/javascript"> if (!window.mstag) mstag = {loadTag : function(){},time : (new Date()).getTime()};</script> <script id="mstag_tops" type="text/javascript" src="//flex.msn.com/mstag/site/122fe662-5d5d-43b8-bc89-a84d3a599840/mstag.js"></script> <script type="text/javascript"> mstag.loadTag("analytics", {dedup:"1",domainId:"565246",type:"1",actionid:"65106"})</script> <noscript> <iframe src="//flex.msn.com/mstag/tag/122fe662-5d5d-43b8-bc89-a84d3a599840/analytics.html?dedup=1&domainId=565246&type=1&actionid=65106" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"> </iframe> </noscript>
 
-*/ ?>
 
+		<?php } 
+		
+		//Adventure Race page
+		
+		if (is_page(4215)) { ?>
+		
+		<!-- Facebook Conversion Code for Adventure Race Conversion Campaign -->
+		<script>(function() {
+		var _fbq = window._fbq || (window._fbq = []);
+		if (!_fbq.loaded) {
+		var fbds = document.createElement('script');
+		fbds.async = true;
+		fbds.src = '//connect.facebook.net/en_US/fbds.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(fbds, s);
+		_fbq.loaded = true;
+		}
+		})();
+		window._fbq = window._fbq || [];
+		window._fbq.push(['track', '6027411379906', {'value':'0.01','currency':'USD'}]);
+		</script>
+		<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6027411379906&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+		
 		<?php }
 		
 		//normal pages ?>
 		
-<?php /*
-<script type="text/javascript">(function(){
-window._fbds = window._fbds || {};
-_fbds.pixelId = 1376762509258705;
-var fbds = document.createElement('script');
-fbds.async = true;
-fbds.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//connect.facebook.net/en_US/fbds.js';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(fbds, s);
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(["track", "PixelInitialized", {}]);
-</script>
-*/ ?>		
+		<script type="text/javascript">(function(){
+		window._fbds = window._fbds || {};
+		_fbds.pixelId = 1376762509258705;
+		var fbds = document.createElement('script');
+		fbds.async = true;
+		fbds.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//connect.facebook.net/en_US/fbds.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(fbds, s);
+		})();
+		window._fbq = window._fbq || [];
+		window._fbq.push(["track", "PixelInitialized", {}]);
+		</script>
+
 	</head>
 		<div id="header">
 			<div>
