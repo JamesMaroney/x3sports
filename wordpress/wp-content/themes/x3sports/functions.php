@@ -101,4 +101,12 @@ function get_the_post_excerpt($id=false) {
 }
 
 
+// Add Infusion feedback form to a page:
+
+function infusionForm() {
+    return '<form accept-charset="UTF-8" action="https://pn211.infusionsoft.com/app/form/process/f068869bd9a7973180508423a6539fba" class="infusion-form" method="POST"><input name="inf_form_xid" type="hidden" value="f068869bd9a7973180508423a6539fba" /><input name="inf_form_name" type="hidden" value="Fill out form" /><input name="infusionsoft_version" type="hidden" value="1.38.0.37" /><label for="inf_field_Email">Email *</label><input class="infusion-field-input-container" id="inf_field_Email" name="inf_field_Email" type="text" /><label for="inf_custom_aField0">Comments/Feedback *</label><textarea cols="24" id="inf_custom_aField0" name="inf_custom_aField0" rows="5"></textarea><input type="submit" value="Submit" /></form><script type="text/javascript" src="https://pn211.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=6f40f66548c835e8030338891dc485a1"></script>';
+}
+add_shortcode('infusion_form', 'infusionForm');
+
+
 ?>
